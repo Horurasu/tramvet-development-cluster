@@ -69,7 +69,7 @@ El componente Item es la base de cosas como MovableItem y GrabbableItem.
 
   
 ![](https://docs.cluster.mu/creatorkit/en/item-components/grabbable-item/inspector.png)
-### Detalle
+
 
 Para especificar el rango donde se pueden capturar los objetos, se requiere al menos un componente Collider en la misma jerarquía que el componente Elemento grabable o como hijo.
 
@@ -81,7 +81,7 @@ Para especificar el rango donde se pueden capturar los objetos, se requiere al m
 
   
 ![](https://docs.cluster.mu/creatorkit/en/item-components/movable-item/inspector.png)
-### Detalle
+
 
 El componente MovableItem requiere un componente Rigidbody. El comportamiento del elemento móvil se puede controlar configurando el cuerpo rígido. Consulte el manual de Unity para obtener detalles sobre la configuración de Rigidbody.
 
