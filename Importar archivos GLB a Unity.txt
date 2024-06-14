@@ -1,0 +1,24 @@
+# GLB package for Unity
+
+## INSTRUCCIONES
+
+1. Importar los contenidos de la carpeta "GLTFUtility-master" a Unity en la sección "Assets" (puedes arrastrar y soltar los archivos directamente a Unity).
+
+2. Dirigirse a la esquina superior izquierda de la pantalla (dentro de Unity) y hacer clic en:
+    - Edit
+    - Project settings
+    - Graphics
+
+3. Dentro de la ventana de "Graphics", hacer scroll hacia abajo y en la sección de "Always included shaders":
+    - En assets abrir la carpeta de "GLTFUtility-master".
+        - Materials
+    - Dentro de la subcarpeta de "Materials" habrán cuatro archivos.
+    - Seleccionar los cuatro con la combinación de teclas "ctrl + click izquierdo".
+    - Arrastrar los archivos a la ventana de "Always included shaders".
+    - Aceptar.
+
+4. Listo, ahora se puede importar modelos GLB a Unity.
+
+5. Link para descargar los archivos:
+
+# https://drive.google.com/drive/folders/1AxblMnRcfIiWUbBBS6_Qr8661HaTKWX3?usp=sharing
