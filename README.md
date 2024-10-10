@@ -2,7 +2,11 @@
 
 -  Oscar Gael Mayen Tello
 -  Sergio Rangel Vargas
--  Juan Manuel López González
+-  Adrian Dolores Sanchez Rios
+-  Vanessa Marshall
+-  Ricardo Rivera Carrillo
+-  Guadalupe Ilén Carrera Rivera
+
 
 # Development Guide
 Discord oficial de la comunidad de cluster [Discord](https://discord.com/invite/p3QVat6cD4).
@@ -87,6 +91,113 @@ El componente MovableItem requiere un componente Rigidbody. El comportamiento de
 
 Cuando el elemento móvil se mueve a una posición inferior a la altura de aparición, volverá a su posición inicial. Los elementos móviles generados dinámicamente mediante el truco Crear elemento se descartarán.
 
+# Creación del terreno usando Herramientas 
+Pro Terrain: Herramienta para crear y modificar terrenos realistas, permitiendo esculpir paisajes y agregar detalles como texturas, árboles y hierba.
+### Agregar Terrain Sample Asset Pack:
+Abre tu proyecto en Unity y descarga el Terrain Sample Asset Pack desde el Asset Store o desde un enlace proporcionado.
+
+
+### Acceder al Package Manager:
+Haz clic en el menú Window (Ventana) y selecciona Package Manager.
+}
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch1.png)
+
+### Instalar Terrain Tools:
+En el Package Manager, selecciona Unity Registry en el menú desplegable, busca Terrain Tools, y haz clic en Download e Install para instalar el paquete.
+
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch2.png)
+
+### Usar Terrain Tools:
+Para acceder a la herramienta, ve al menú Window, selecciona Terrain y luego Terrain Toolbox. Esto abrirá una pestaña desde la cual podrás crear y personalizar terrenos según tus necesidades.
+
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch3.png)
+
+Crear el terreno: Comienza creando el terreno con las medidas adecuadas según las necesidades del proyecto.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch4.png)
+
+Modificar la elevación: Selecciona la herramienta de elevar o bajar el terreno (Raise or Lower Terrain) y ajusta las montañas o elevaciones de acuerdo a lo que requiera el escenario.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch5.png)
+
+### Uso de otras herramientas:
+ Puedes utilizar diferentes herramientas para personalizar el terreno, como pintar superficies, generar árboles o arbustos, y ajustar la cantidad y distribución de estos elementos según lo que necesites.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch6.png)
+
+## ProBuilder:
+Herramienta de modelado 3D dentro de Unity para crear y editar geometría directamente en el editor, ideal para diseñar niveles y estructuras.
+
+### Acceder al Package Manager:
+
+Haz clic en el menú Window y selecciona Package Manager.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch7.png)
+
+### Instalar ProBuilder:
+En el Package Manager, selecciona Unity Registry en el menú desplegable, busca ProBuilder, y haz clic en Download e Install para instalar el paquete.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch8.png)
+
+### Abrir ProBuilder:
+Ve al menú Tools, selecciona ProBuilder, y luego ProBuilder Window. Se abrirá una ventana con todas las herramientas de ProBuilder listas para usar.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgSerch9.png)
+
+
+
+
+
+
+## Rotación de elementos visuales del museo:
+
+Para agregar rotación a un objeto al interactuar con él en el entorno de desarrollo de Cluster, sigue estos pasos utilizando los __Gimmicks__ (scripts que generan eventos interactivos con el avatar):
+
+1. **Agregar el script "Add Instant Torque Item Gimmick (Script)"**:
+   - Este script se encargará de aplicar torque al objeto. En las propiedades del script, verás un campo llamado __Key__. 
+   - En el campo __Key__, debes asignar un nombre único, ya que este identificador será utilizado por otros componentes para vincular la interacción.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgAdrian1.png)
+
+2. **Agregar el script "Interactive Item Trigger (Script)"**:
+   - Este script permitirá que el avatar interactúe con el objeto.
+   - En las propiedades de este script, en el campo __Target__, debes introducir el nombre que asignaste previamente en el campo __Key__ del script "Add Instant Torque Item Gimmick".
+   - Este paso vincula la acción de aplicar torque al interactuar con el objeto.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgAdrian2.png)
+
+3. **Agregar el script "Movable Item (Script)"**:
+   - Este script es necesario para que el objeto sea movible y responda al torque.
+   - Asegúrate de que esté agregado dentro de los componentes  para que el objeto pueda rotar adecuadamente en cualquiera de sus ejes al aplicar el torque.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgAdrian4.png)
+Con estos tres componentes configurados correctamente, al interactuar con el objeto, se le aplicará un torque instantáneo, lo que causará su rotación en el eje especificado.
+
+> [!TIP]
+> para una mejor rotación utilizar un collider esférico __(Sphere Collider)__
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/imgAdrian5.png)
+
+> [!IMPORTANT]
+>el objeto no debe contar con gravedad 
+
+## Zona 3
+Un espacio en donde el usuario puede interactuar con modelos que serán  destruidos para revelar objetos escondidos, cuenta  con un amplio espacio para explorar y visualmente sea atractivo para todos
+### Interaccion del Usuario
+En Unity creamos piedras o elementos que se pueden destruir junto con la emisión de sonido como actividad principal de esta zona.
+Para esto, creamos una carpeta vacía en el apartado de Assets del proyecto, en ella vamos a guardar el sonido que emitirán las rocas al ser destruidas.
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/Captura%20de%20pantalla%202024-07-31%20191540.png?raw=true)
+
+> [!TIP]
+>Nombrar los audios y carpetas con nombres claros y descriptivos.
+
+Después, vamos a crear un objeto vacío en la escena para poder almacenar y ordenar los Assets que van a ser destruidos posteriormente.
+
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/Captura%20de%20pantalla%202024-07-31%20191827.png?raw=true)
+
+
+Ese objeto principal deberá tener estas propiedades o componentes.
+
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/Captura%20de%20pantalla%202024-07-31%20191915.png?raw=true)
+
+
+> [!IMPORTANT]
+> Los Scripts usados para todo el proyecto, ya se encuentran en el entorno de desarrollo de Cluster, solo hace falta presionar (Addcomponent) y buscar el Script  deseado.
+
+Dentro del objeto vacío colocamos los Assets que se van a destruir con la interacción del Usuario y deberán tener las siguientes propiedades o componentes.
+
+
+![](https://github.com/oskarinmate/Cluster_Project_images/blob/main/Captura%20de%20pantalla%202024-07-31%20192340.png?raw=true)
 
 
 
